@@ -18,7 +18,7 @@ public class PlayerState : MonoBehaviour
     public float expCur;
     public float hpCur;
     public float mpCur;
-
+    float poisonDmg = 0.03f ;
     
     //public int atkPower;
     //public float crticalRate;
@@ -160,6 +160,10 @@ public class PlayerState : MonoBehaviour
             mpCur += damage * 0.0005f;
     }
 
+    public void Poison()
+    {
+        StartCoroutine("PoisonDot");
+    }
 
     IEnumerator Died()
     {
@@ -167,5 +171,28 @@ public class PlayerState : MonoBehaviour
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
 
+    }
+
+    IEnumerator PoisonDot()
+    {
+        hpCur -= hpCur * poisonDmg;
+        yield return new WaitForSecondsRealtime(2.0f);
+        hpCur -= hpCur * poisonDmg;
+        yield return new WaitForSecondsRealtime(2.0f);
+        hpCur -= hpCur * poisonDmg;
+        yield return new WaitForSecondsRealtime(2.0f);
+        hpCur -= hpCur * poisonDmg;
+        yield return new WaitForSecondsRealtime(2.0f);
+        hpCur -= hpCur * poisonDmg;
+        yield return new WaitForSecondsRealtime(2.0f);
+        hpCur -= hpCur * poisonDmg;
+        yield return new WaitForSecondsRealtime(2.0f);
+        hpCur -= hpCur * poisonDmg;
+        yield return new WaitForSecondsRealtime(2.0f);
+        hpCur -= hpCur * poisonDmg;
+        yield return new WaitForSecondsRealtime(2.0f);
+        hpCur -= hpCur * poisonDmg;
+        yield return new WaitForSecondsRealtime(2.0f);
+        hpCur -= hpCur * poisonDmg;
     }
 }

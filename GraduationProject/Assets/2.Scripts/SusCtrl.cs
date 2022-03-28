@@ -5,6 +5,7 @@ using UnityEngine;
 public class SusCtrl : MonoBehaviour
 {
     Animator susAnimator;
+    PlayerState playerState;
 
     //public GameObject AttackCollider;
 
@@ -19,6 +20,7 @@ public class SusCtrl : MonoBehaviour
 
     [Header("스킬")]
     public GameObject firstSkill;
+    public GameObject secondSkill;
 
 
 
@@ -31,6 +33,7 @@ public class SusCtrl : MonoBehaviour
     {
         bossState = GetComponent<BossState>();
         meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        playerState = FindObjectOfType<PlayerState>();
         originColor = meshRenderer.material.color;
         susAnimator = GetComponent<Animator>();
         hitBox = GetComponentInChildren<HitBox>();
@@ -88,18 +91,17 @@ public class SusCtrl : MonoBehaviour
                 case 0:
                     atkStep += 1;
                     //Debug.Log("1스킬사용");
-                    susAnimator.Play("Ready 0");
+                    susAnimator.Play("Ready 1");
                     StartCoroutine("FirstSkill");
                     break;
-                //case 1:
-                //    atkStep += 1;
-                //    bossState.atk += 6;
-                //    susAnimator.Play("Ready 2");
-                //    break;
-                //case 2:
-                //    atkStep = 0;
-                //    susAnimator.Play("Ready 3");
-                //    break;
+                case 1:
+                    atkStep += 1;
+                    susAnimator.Play("Ready 2");
+                    break;
+                    //case 2:
+                    //    atkStep = 0;
+                    //    susAnimator.Play("Ready 3");
+                    //    break;
             }
         }
     }
@@ -114,6 +116,17 @@ public class SusCtrl : MonoBehaviour
     void UnFreezeBoss()
     {
         enableAct = true;
+    }
+    void Poison()
+    {
+        if ((target.position - transform.position).magnitude < 65)
+        {
+            playerState.SendMessage("Poison");
+        }
+    }
+    void SecondSkill()
+    {
+        secondSkill.SetActive(true);
     }
 
 
