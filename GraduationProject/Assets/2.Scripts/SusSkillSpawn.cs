@@ -10,15 +10,19 @@ public class SusSkillSpawn : MonoBehaviour
 
 	void Start()
 	{
+
+	}
+    private void OnEnable()
+    {
 		existPoison = new GameObject[maxPoison];
 		StartCoroutine(Exec());
 	}
-	IEnumerator Exec()
+    IEnumerator Exec()
 	{
 		while (true)
 		{
 			Generate();
-			yield return new WaitForSeconds(15.0f);
+			yield return new WaitForSeconds(1.0f);
 		}
 	}
 

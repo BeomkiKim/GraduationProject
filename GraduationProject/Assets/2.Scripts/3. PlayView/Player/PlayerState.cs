@@ -18,7 +18,7 @@ public class PlayerState : MonoBehaviour
     public float expCur;
     public float hpCur;
     public float mpCur;
-    float poisonDmg = 0.03f ;
+    float poisonDmg = 0.04f;
     
     //public int atkPower;
     //public float crticalRate;
@@ -31,6 +31,7 @@ public class PlayerState : MonoBehaviour
     Animator anim;
     PlayerHit playerHit;
     CameraController cameraController;
+    public bool stopMove = false;
 
     public bool isDie = false;
 
@@ -123,7 +124,7 @@ public class PlayerState : MonoBehaviour
     void Update()
     {
         SyncBar();
-        if(hpCur <= playerHit.dmg)
+        if (hpCur <= playerHit.dmg)
         {
             hpCur = 0f;
             mpCur = 0f;
@@ -131,7 +132,7 @@ public class PlayerState : MonoBehaviour
             cameraController.sensitiveity = 0f;
             StartCoroutine("Died");
         }
-        if(expCur >= maxExp)
+        if (expCur >= maxExp)
         {
             print("Level Up");
             lev += 1;
@@ -142,14 +143,15 @@ public class PlayerState : MonoBehaviour
             mpCur += mp;
             maxExp += maxExp;
         }
-        if(hpCur>hp)
+        if (hpCur > hp)
         {
             hpCur -= (hpCur - hp);
         }
-        if(mpCur>mp)
+        if (mpCur > mp)
         {
             mpCur -= (mpCur - mp);
         }
+
     }
 
     public void GetHp(int damage)

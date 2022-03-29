@@ -80,4 +80,13 @@ public class PlayerAnimator : MonoBehaviour
     {
         attackCollision.SetActive(true);
     }
+
+    public void Stun()
+    {
+        animator.SetBool("Stun", true);
+    }
+    public void ResetStun()
+    {
+        animator.SetBool("Stun", false);
+    }
 }

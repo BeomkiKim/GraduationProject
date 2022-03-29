@@ -6,8 +6,7 @@ public class SusCtrl : MonoBehaviour
 {
     Animator susAnimator;
     PlayerState playerState;
-
-    //public GameObject AttackCollider;
+    public Transform sus;
 
     //public GameObject hp_bar;
 
@@ -20,7 +19,8 @@ public class SusCtrl : MonoBehaviour
 
     [Header("½ºÅ³")]
     public GameObject firstSkill;
-    public GameObject secondSkill;
+    public GameObject[] secondSkill;
+    public GameObject thirdSkill;
 
 
 
@@ -98,10 +98,11 @@ public class SusCtrl : MonoBehaviour
                     atkStep += 1;
                     susAnimator.Play("Ready 2");
                     break;
-                    //case 2:
-                    //    atkStep = 0;
-                    //    susAnimator.Play("Ready 3");
-                    //    break;
+                case 2:
+                    atkStep = 0;
+                    susAnimator.Play("Ready 3");
+                    StartCoroutine("ThirdSkill");
+                    break;
             }
         }
     }
@@ -124,11 +125,14 @@ public class SusCtrl : MonoBehaviour
             playerState.SendMessage("Poison");
         }
     }
-    void SecondSkill()
+    void StopMove()
     {
-        secondSkill.SetActive(true);
+        playerState.stopMove = true;
     }
-
+    void ResetMove()
+    {
+        playerState.stopMove = false;
+    }
 
     private IEnumerator OnHitColor()
     {
@@ -144,5 +148,27 @@ public class SusCtrl : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         firstSkill.SetActive(true);
+        yield return new WaitForSecondsRealtime(15.0f);
+        firstSkill.SetActive(false);
+    }
+    IEnumerator SecondSkill()
+    {
+        for (int secondSkillCount = 0; secondSkillCount < secondSkill.Length; secondSkillCount++)
+        {
+            secondSkill[secondSkillCount].SetActive(true);
+        }
+        yield return new WaitForSecondsRealtime(10.0f);
+        for (int secondSkillCount = 0; secondSkillCount < secondSkill.Length; secondSkillCount++)
+        {
+            secondSkill[secondSkillCount].SetActive(false);
+        }
+    }
+    IEnumerator ThirdSkill()
+    {
+        thirdSkill.transform.position = sus.transform.position + new Vector3(0, 5, 5);
+        thirdSkill.transform.rotation = sus.transform.rotation;
+        yield return new WaitForSecondsRealtime(3.0f);
+        thirdSkill.SetActive(true);
+
     }
 }

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5628746708283340090}
   - component: {fileID: 5627376103151941884}
   - component: {fileID: 8961335111784596028}
+  - component: {fileID: 4794201535466334331}
+  - component: {fileID: -4878940458563896402}
   m_Layer: 0
   m_Name: Skill_2
   m_TagString: Untagged
@@ -4833,8 +4835,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25a8a2ab8fa725469208a9594f9e9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  downSpeed: 13
-  forwardSpeed: 2
+  downSpeed: 25
+  forwardSpeed: 1
+  damage: 0
+--- !u!65 &4794201535466334331
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5537196767209846630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-4878940458563896402
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5537196767209846630}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5537217011271533066
 GameObject:
   m_ObjectHideFlags: 0
