@@ -125,13 +125,9 @@ public class SusCtrl : MonoBehaviour
             playerState.SendMessage("Poison");
         }
     }
-    void StopMove()
+    void Stun()
     {
-        playerState.stopMove = true;
-    }
-    void ResetMove()
-    {
-        playerState.stopMove = false;
+        playerState.SendMessage("Stun");
     }
 
     private IEnumerator OnHitColor()
@@ -168,7 +164,6 @@ public class SusCtrl : MonoBehaviour
         thirdSkill.transform.position = sus.transform.position + new Vector3(0, 3, 5);
         thirdSkill.transform.rotation = sus.transform.rotation;
         yield return new WaitForSecondsRealtime(3.0f);
-        Debug.Log("º“»Ø");
         thirdSkill.SetActive(true);
 
     }

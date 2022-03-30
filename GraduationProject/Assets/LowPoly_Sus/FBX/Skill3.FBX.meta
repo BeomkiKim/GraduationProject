@@ -519,14 +519,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0.12923501
-        functionName: StopMove
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.37049308
-        functionName: ResetMove
+        functionName: Stun
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

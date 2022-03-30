@@ -162,17 +162,6 @@ public class PlayerController : MonoBehaviour
         {
             movement.moveSpeed = 0;
         }
-        if (playerState.stopMove)
-        {
-            movement.moveSpeed = 0;
-            playerAnimator.Stun();
-        }
-        else
-        {
-            playerState.stopMove = false;
-            movement.moveSpeed = 7;
-            playerAnimator.ResetStun();
-        }
 
 
 

@@ -22,6 +22,7 @@ public class PlayerAnimator : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         movement = GetComponent<Movement>();
     }
+
     public void onMovement(float horizontal, float vertical)
     {
         animator.SetFloat("horizontal", horizontal);
@@ -56,7 +57,14 @@ public class PlayerAnimator : MonoBehaviour
         playerController.attacking = false;
         movement.moveSpeed = 5.0f;
     }
-
+    void stunStart()
+    {
+        movement.moveSpeed = 0.0f;
+    }
+    void stunFinish()
+    {
+        movement.moveSpeed = 7.0f;
+    }
 
     public void onSkillAttackQ()
     {
@@ -79,14 +87,5 @@ public class PlayerAnimator : MonoBehaviour
     public void OnAttackCollision()
     {
         attackCollision.SetActive(true);
-    }
-
-    public void Stun()
-    {
-        animator.SetBool("Stun", true);
-    }
-    public void ResetStun()
-    {
-        animator.SetBool("Stun", false);
     }
 }

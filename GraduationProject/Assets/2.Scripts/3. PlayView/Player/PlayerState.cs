@@ -31,9 +31,12 @@ public class PlayerState : MonoBehaviour
     Animator anim;
     PlayerHit playerHit;
     CameraController cameraController;
-    public bool stopMove = false;
+    Movement movement;
+    //public bool stopMove = false;
 
     public bool isDie = false;
+    public bool isStun = false;
+    public GameObject nextStage;
 
     public void SavePlayer()
     {
@@ -51,7 +54,11 @@ public class PlayerState : MonoBehaviour
         //save.CLEARCOUNT = clearCount;
 
         SaveManager.Save(save);
-        SceneManager.LoadScene("StageSelect", LoadSceneMode.Single);
+        nextStage.SetActive(true);
+    }
+    public void ClickStage2()
+    {
+        SceneManager.LoadScene("Stage2", LoadSceneMode.Single);
     }
 
     public void ResetPlayer()
@@ -100,6 +107,7 @@ public class PlayerState : MonoBehaviour
        anim = GetComponent<Animator>();
        playerHit = FindObjectOfType<PlayerHit>();
        cameraController = FindObjectOfType<CameraController>();
+       movement = GetComponent<Movement>();
 
 
     }
@@ -166,7 +174,17 @@ public class PlayerState : MonoBehaviour
     {
         StartCoroutine("PoisonDot");
     }
-
+    public void Stun()
+    {
+        isStun = true;
+        StartCoroutine("StunStart");
+    }
+    IEnumerator StunStart()
+    {
+        anim.SetBool("Stun", true);
+        yield return new WaitForSecondsRealtime(3.0f);
+        anim.SetBool("Stun", false);
+    }
     IEnumerator Died()
     {
         anim.SetTrigger("onDied");

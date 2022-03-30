@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
 
     public float MoveSpeed
     {
-        set => moveSpeed = Mathf.Clamp(value, 25.0f, 30.0f);//7
+        set => moveSpeed = Mathf.Clamp(value, 7.0f, 12.0f);//7
     }
 
     private void Awake()

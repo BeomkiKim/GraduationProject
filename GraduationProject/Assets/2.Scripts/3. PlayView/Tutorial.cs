@@ -9,9 +9,11 @@ public class Tutorial : MonoBehaviour
     public GameObject nextPanel;
     public GameObject title;
 
+    PlayerState playerState;
 
     private void Start()
     {
+        playerState = FindObjectOfType<PlayerState>();
         Time.timeScale = 0;
     }
 
@@ -35,8 +37,11 @@ public class Tutorial : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            playerState.LoadPlayer();
             NextPage();
+        }
 
     }
 }

@@ -20,6 +20,12 @@ public class StageSelect : MonoBehaviour
         SceneManager.LoadScene("Stage1", LoadSceneMode.Single);
 
     }
+
+    public void ClickStage2()
+    {
+        SceneManager.LoadScene("Stage2", LoadSceneMode.Single);
+    }
+
     public void ClickBack()
     {
         resetOk.SetActive(false);
