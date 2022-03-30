@@ -38,13 +38,4 @@ public class Movement : MonoBehaviour
         moveDirection = new Vector3(direction.x, moveDirection.y, direction.z);
     }
 
-    void StopMove()
-    {
-        moveSpeed = 0.1f;
-    }
-
-    void Reset()
-    {
-        moveSpeed = 7.0f;
-    }
 }

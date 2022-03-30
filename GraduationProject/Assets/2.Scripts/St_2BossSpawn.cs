@@ -8,7 +8,7 @@ public class St_2BossSpawn : MonoBehaviour
     public GameObject statueEffect;
     public GameObject bossCircle;
     public GameObject eventCam;
-    //public GameObject st2_boss;
+    public GameObject st2_boss;
     public int count;
 
 
@@ -23,7 +23,7 @@ public class St_2BossSpawn : MonoBehaviour
             statueEffect.SetActive(true);
             bossCircle.SetActive(true);
             eventCam.SetActive(true);
-            //st2_boss.SetActive(true);
+            st2_boss.SetActive(true);
         }
     }
 }

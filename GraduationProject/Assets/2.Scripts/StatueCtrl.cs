@@ -13,8 +13,12 @@ public class StatueCtrl : MonoBehaviour
 
     private void OnDestroy()
     {
-        bossZone[0].gameObject.SetActive(true);
-        bossZone[1].gameObject.SetActive(true);
-        bossZone[2].gameObject.SetActive(true);
+        for(int bossZoneCount = 0; bossZoneCount < bossZone.Length; ++bossZoneCount)
+        {
+            bossZone[bossZoneCount].gameObject.SetActive(true);
+        }
+        //bossZone[0].gameObject.SetActive(true);
+        //bossZone[1].gameObject.SetActive(true);
+        //bossZone[2].gameObject.SetActive(true);
     }
 }

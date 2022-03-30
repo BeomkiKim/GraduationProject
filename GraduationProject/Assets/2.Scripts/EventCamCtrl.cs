@@ -11,7 +11,7 @@ public class EventCamCtrl : MonoBehaviour
 
     IEnumerator ActiveCamera()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(4.5f);
         Destroy(gameObject);
     }
 }

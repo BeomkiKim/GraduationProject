@@ -165,9 +165,10 @@ public class SusCtrl : MonoBehaviour
     }
     IEnumerator ThirdSkill()
     {
-        thirdSkill.transform.position = sus.transform.position + new Vector3(0, 5, 5);
+        thirdSkill.transform.position = sus.transform.position + new Vector3(0, 3, 5);
         thirdSkill.transform.rotation = sus.transform.rotation;
         yield return new WaitForSecondsRealtime(3.0f);
+        Debug.Log("º“»Ø");
         thirdSkill.SetActive(true);
 
     }
