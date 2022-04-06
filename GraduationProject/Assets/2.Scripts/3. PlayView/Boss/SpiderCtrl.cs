@@ -15,10 +15,6 @@ public class SpiderCtrl : MonoBehaviour
 
     public float bossSpeed;
 
-
-
-
-
     private void Awake()
     {
         bossSpeed = Random.Range(1.3f, 2.3f);

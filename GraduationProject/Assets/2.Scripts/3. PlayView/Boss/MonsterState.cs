@@ -12,11 +12,13 @@ public class MonsterState : MonoBehaviour
     public int exp;
 
     PlayerState playerState;
+    ItemSpawn item;
 
     private void Start()
     {
         hpCur = hp;
         playerState = FindObjectOfType<PlayerState>();
+        item = GetComponent<ItemSpawn>();
     }
 
     private void Update()
@@ -24,7 +26,13 @@ public class MonsterState : MonoBehaviour
         if (hpCur <= 0)
         {
             playerState.expCur += exp;
+            if (gameObject.tag == "ItemStatue")
+            {
+                item.SendMessage("DropItem");
+            }
+            
             Destroy(gameObject);
+
         }
     }
 
