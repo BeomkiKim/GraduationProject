@@ -30,6 +30,7 @@ public class BossState : MonoBehaviour
 
     private void Start()
     {
+        hp_bar.SetActive(true);
         hp_Cur = hp;
         anim = GetComponent<Animator>();
         playerState = FindObjectOfType<PlayerState>();
@@ -50,8 +51,11 @@ public class BossState : MonoBehaviour
     {
         SyncBar();
 
-        if (hp_Cur <= 0)
+        if (hp_Cur <= 0f)
         {
+            StartCoroutine("Died");
+            Debug.Log("Á×À½");
+            
             hp_Cur = 0f;
             playerState.expCur += exp;
             if (comunityObj.Length == 0)
@@ -59,13 +63,13 @@ public class BossState : MonoBehaviour
             comunityObj[0].SetActive(false);
             comunityObj[1].SetActive(true);
             comunityObj[2].SetActive(false);
-            StartCoroutine("Died");
         }
     }
 
     IEnumerator Died()
     {
-        anim.Play("Die");
+        anim.SetBool("Die", true);
+        Debug.Log("Die");
         yield return new WaitForSeconds(3f);
         hp_bar.SetActive(false);
         gameObject.SetActive(false);

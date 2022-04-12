@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHit : MonoBehaviour
 {
+    public GameObject screenBlood;
     public int dmg;
     public void TakeDamage(int damage)
     {
@@ -15,7 +16,7 @@ public class PlayerHit : MonoBehaviour
             damage = 0;
         }
 
-
+        screenBlood.SetActive(true);
         playerState.hpCur -= damage;
         dmg = damage;
     }

@@ -19,6 +19,7 @@ public class PlayerState : MonoBehaviour
     public float hpCur;
     public float mpCur;
     float poisonDmg = 0.04f;
+    public GameObject poisonEffect;
     
     //public int atkPower;
     //public float crticalRate;
@@ -196,23 +197,33 @@ public class PlayerState : MonoBehaviour
     IEnumerator PoisonDot()
     {
         hpCur -= hpCur * poisonDmg;
+        poisonEffect.SetActive(true);
         yield return new WaitForSecondsRealtime(2.0f);
         hpCur -= hpCur * poisonDmg;
+        poisonEffect.SetActive(true);
         yield return new WaitForSecondsRealtime(2.0f);
         hpCur -= hpCur * poisonDmg;
+        poisonEffect.SetActive(true);
         yield return new WaitForSecondsRealtime(2.0f);
         hpCur -= hpCur * poisonDmg;
+        poisonEffect.SetActive(true);
         yield return new WaitForSecondsRealtime(2.0f);
         hpCur -= hpCur * poisonDmg;
+        poisonEffect.SetActive(true);
         yield return new WaitForSecondsRealtime(2.0f);
         hpCur -= hpCur * poisonDmg;
+        poisonEffect.SetActive(true);
         yield return new WaitForSecondsRealtime(2.0f);
         hpCur -= hpCur * poisonDmg;
+        poisonEffect.SetActive(true);
         yield return new WaitForSecondsRealtime(2.0f);
         hpCur -= hpCur * poisonDmg;
+        poisonEffect.SetActive(true);
         yield return new WaitForSecondsRealtime(2.0f);
         hpCur -= hpCur * poisonDmg;
+        poisonEffect.SetActive(true);
         yield return new WaitForSecondsRealtime(2.0f);
         hpCur -= hpCur * poisonDmg;
+        poisonEffect.SetActive(true);
     }
 }
