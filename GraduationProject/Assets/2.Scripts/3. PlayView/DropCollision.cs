@@ -22,7 +22,7 @@ public class DropCollision : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && skill.isFCool == false && playerState.mpCur >= skill.fCost)
+        if (Input.GetKeyDown(KeyCode.E) && skill.isFCool == false && playerState.mpCur >= skill.fCost)
         {
             StartCoroutine(Exec());
         }

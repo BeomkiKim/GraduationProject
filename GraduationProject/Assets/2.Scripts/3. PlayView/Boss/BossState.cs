@@ -54,7 +54,7 @@ public class BossState : MonoBehaviour
         if (hp_Cur <= 0f)
         {
             StartCoroutine("Died");
-            Debug.Log("Á×À½");
+            //Debug.Log("Á×À½");
             
             hp_Cur = 0f;
             playerState.expCur += exp;

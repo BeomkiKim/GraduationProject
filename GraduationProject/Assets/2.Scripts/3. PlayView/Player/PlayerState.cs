@@ -109,6 +109,7 @@ public class PlayerState : MonoBehaviour
        playerHit = FindObjectOfType<PlayerHit>();
        cameraController = FindObjectOfType<CameraController>();
        movement = GetComponent<Movement>();
+       LoadPlayer();
 
 
     }
