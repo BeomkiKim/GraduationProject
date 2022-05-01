@@ -12,6 +12,7 @@ TagManager:
   - PlayerHit
   - Boss
   - ItemStatue
+  - SpawnMonster
   layers:
   - Default
   - TransparentFX

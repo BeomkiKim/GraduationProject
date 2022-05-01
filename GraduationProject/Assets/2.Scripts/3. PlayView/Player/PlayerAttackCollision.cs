@@ -62,6 +62,12 @@ public class PlayerAttackCollision : MonoBehaviour
             hitStop.StopTime();
             playerState.GetHp(damage);
         }
+        if(other.CompareTag("SpawnMonster"))
+        {
+            other.GetComponent<SkeletonMonsterHitbox>().TakeDamage(damage);
+            hitStop.StopTime();
+            playerState.GetHp(damage);
+        }
     }
 
     private IEnumerator AutoDisable()

@@ -741,10 +741,10 @@ GameObject:
   - component: {fileID: 720807893661970312}
   - component: {fileID: 720807893218389389}
   - component: {fileID: 720807893675664424}
-  - component: {fileID: 720807893218389390}
+  - component: {fileID: 3051551746276038205}
   m_Layer: 0
   m_Name: Object02
-  m_TagString: Monster
+  m_TagString: SpawnMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -878,7 +878,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.13388361, y: 0.038808107, z: 0.15682271}
   m_Center: {x: -5.935332e-10, y: -0.005415313, z: 0.078411296}
---- !u!114 &720807893218389390
+--- !u!114 &3051551746276038205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -887,7 +887,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 720807893675565766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89895bbe3e3e5ec4bb37f01780f59eb7, type: 3}
+  m_Script: {fileID: 11500000, guid: 868c38a60943d6844b7e1e8ead3a419c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hit: 0

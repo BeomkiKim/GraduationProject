@@ -73,8 +73,8 @@ public class BossState : MonoBehaviour
         yield return new WaitForSeconds(3f);
         hp_bar.SetActive(false);
         gameObject.SetActive(false);
-        //yield return new WaitForSeconds(5f);
-        //SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
 
     }
 
