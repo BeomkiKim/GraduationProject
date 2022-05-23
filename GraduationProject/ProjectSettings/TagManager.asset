@@ -13,6 +13,7 @@ TagManager:
   - Boss
   - ItemStatue
   - SpawnMonster
+  - BackGroundMusic
   layers:
   - Default
   - TransparentFX

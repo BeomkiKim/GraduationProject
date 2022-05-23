@@ -11,7 +11,7 @@ public class Tutorial : MonoBehaviour
 
     PlayerState playerState;
 
-    private void Start()
+    private void Awake()
     {
         playerState = FindObjectOfType<PlayerState>();
         Time.timeScale = 0;

@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
 
         Cursor.visible = false; //마우스 커서를 보이지 않게
         Cursor.lockState = CursorLockMode.Locked; //마우스 커서 위치 고정
+        Time.timeScale = 0;
         
         isClear = false;
 
@@ -82,6 +83,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && !EventSystem.current.IsPointerOverGameObject() && Time.timeScale != 0)
         {
            playerAnimator.onWeaponAttack();
+            GameObject.Find("SoundController").GetComponent<SoundController>().PlaySword();
         }
 
 
